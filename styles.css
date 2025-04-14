@@ -27,12 +27,13 @@ header {
 }
 
 .overlapping_img {
-  width: 120px;
-  height: 120px;
+  width: 140px;
+  height: 140px;
   border-radius: 50%;
   object-fit: cover;
   position: absolute;
-  top: 328px;
+  top: 305px;
+  border: 10px solid white;
 }
 
 ::-webkit-scrollbar {
