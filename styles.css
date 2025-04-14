@@ -1,0 +1,51 @@
+body {
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+header {
+  height: 140px;
+  width: 100vl;
+  background: orange;
+  display: flex;
+  align-items: center;
+  padding-left: 20px;
+}
+
+.restaurant_head {
+  display: flex;
+  justify-content: center;
+}
+
+.restaurant_img {
+  height: 240px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.overlapping_img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  position: absolute;
+  top: 328px;
+}
+
+::-webkit-scrollbar {
+  width: 12px;
+  background: white;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: white;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background-color: orange;
+}
