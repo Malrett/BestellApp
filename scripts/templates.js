@@ -4,7 +4,7 @@ function getDishTemplate(dish, index) {
         <div class="left_side">
             <h2>${dish[index].name}</h2>
             <p>${dish[index].description}</p>
-            <p>${dish[index].price}</p>
+            <p class="price">${dish[index].price.toFixed(2).replace(".", ",")} €</p>
         </div>
         <p onclick="addToBasket('${dish[index].name}', '${dish[index].price}')" class="right_side">+</p>
         

@@ -1,5 +1,7 @@
 body {
   margin: 0;
+  font-family: raleway;
+  font-variant-numeric: lining-nums;
 }
 
 html {
@@ -34,6 +36,53 @@ header {
   position: absolute;
   top: 305px;
   border: 10px solid white;
+}
+
+.restaurant_details {
+  margin-left: 12px;
+  margin-right: 12px;
+}
+
+.restaurant_dishes {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-left: 12px;
+  margin-right: 12px;
+}
+
+.dish {
+  display: flex;
+  justify-content: space-between;
+  border: 2px solid lightgrey;
+}
+
+.dish:hover {
+  background-color: rgba(247, 211, 166, 0.488);
+}
+
+.left_side {
+  padding-left: 12px;
+}
+
+.price {
+  color: orange;
+  font-weight: bold;
+}
+
+.right_side {
+  width: 60px;
+  height: 60px;
+  font-size: 84px;
+  font-weight: lighter;
+  border-left: solid 2px lightgrey;
+  border-bottom: solid 2px lightgrey;
+  color: orange;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  cursor: pointer;
 }
 
 ::-webkit-scrollbar {
