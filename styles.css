@@ -8,6 +8,14 @@ html {
   scroll-behavior: smooth;
 }
 
+.d_none {
+  display: none !important; /* "!important"," because some classes already contain display: flex */
+}
+
+h1 {
+  font-size: 40px;
+}
+
 header {
   height: 140px;
   width: 100vl;
@@ -39,11 +47,36 @@ header {
 }
 
 .restaurant_details {
-  margin-left: 12px;
-  margin-right: 12px;
+  height: 120px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 12px 16px 12px;
 }
 
-.restaurant_dishes {
+.restaurant_rating {
+  color: orange;
+}
+
+.category_selection {
+  background: #f3f3f3;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding-left: 12px;
+  margin: 12px 0 12px 0;
+}
+
+.category_selection p {
+  cursor: pointer;
+}
+
+.category_selection p:hover {
+  color: orange;
+}
+
+.dishes_layout {
   display: flex;
   flex-direction: column;
   gap: 12px;
@@ -54,7 +87,7 @@ header {
 .dish {
   display: flex;
   justify-content: space-between;
-  border: 2px solid lightgrey;
+  border: 2px solid #f3f3f3;
 }
 
 .dish:hover {
@@ -75,18 +108,17 @@ header {
   height: 60px;
   font-size: 84px;
   font-weight: lighter;
-  border-left: solid 2px lightgrey;
-  border-bottom: solid 2px lightgrey;
+  border-left: solid 2px #f3f3f3;
+  border-bottom: solid 2px #f3f3f3;
   color: orange;
   display: flex;
   align-items: center;
   justify-content: center;
   margin: 0;
-  cursor: pointer;
 }
 
 ::-webkit-scrollbar {
-  width: 12px;
+  width: 10px;
   background: white;
 }
 

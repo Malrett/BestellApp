@@ -25,10 +25,15 @@
         <h1>Pasta Fresca</h1>
         <div class="restaurant_rating">Bewertung (4.8 von 5 Sternen)</div>
       </section>
-      <section class="restaurant_dishes" id="dishes_container"></section>
-      <section class="restaurant_sidedishes" id="side_dishes_container"></section>
+      <section class="category_selection">
+        <p onclick="showMenu('starters_container', 'dishes_container')">Vorspeisen</p>
+        <p onclick="showMenu('dishes_container', 'starters_container')">Hauptgerichte</p>
+      </section>
+      <section class="dishes_layout" id="starters_container"></section>
+      <section class="dishes_layout d_none" id="dishes_container"></section>
       <section class="basket_container">
         <div id="basket" class="basket"></div>
+        <div id="sumTotal" class="total_amount"></div>
       </section>
     </main>
     <footer></footer>

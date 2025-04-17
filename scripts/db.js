@@ -17,7 +17,7 @@ let mainDishes = [
   {
     "name": "Tagliatelle al ragù bolognese",
     "price": 15.99,
-    "description": "Hausgemachte Tagliatelle mit Rinderhack, Genüse und Tomaten",
+    "description": "Hausgemachte Tagliatelle mit Rinderhack, Gemüse und Tomaten",
   },
   {
     "name": "Lasagne alla Casa",
@@ -31,7 +31,7 @@ let mainDishes = [
   },
 ];
 
-let sideDishes = [
+let starters = [
   {
     "name": "Caprese",
     "price": 8.99,

@@ -1,0 +1,16 @@
+.basket_container {
+  max-width: 520px;
+  display: flex;
+  flex-direction: column;
+}
+
+.basket_item {
+  display: flex;
+  flex-direction: column;
+}
+
+.basket_details {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
