@@ -18,11 +18,20 @@ h1 {
 
 header {
   height: 140px;
-  width: 100vl;
   background: orange;
   display: flex;
   align-items: center;
   padding-left: 20px;
+}
+
+main {
+  display: flex;
+  flex-direction: row;
+  flex-grow: 1;
+}
+
+.content_container {
+  width: 100%;
 }
 
 .restaurant_head {
