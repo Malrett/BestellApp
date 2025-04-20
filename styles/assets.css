@@ -8,4 +8,7 @@ header img {
 
 .clickable {
   cursor: pointer;
+  font-size: 60px;
+  color: orange;
+  margin: 0;
 }

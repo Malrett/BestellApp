@@ -1,6 +1,6 @@
 body {
   margin: 0;
-  font-family: raleway;
+  font-family: figtree;
   font-variant-numeric: lining-nums;
 }
 
@@ -26,8 +26,6 @@ header {
 
 main {
   display: flex;
-  flex-direction: row;
-  flex-grow: 1;
 }
 
 .content_container {
@@ -115,15 +113,12 @@ main {
 .right_side {
   width: 60px;
   height: 60px;
-  font-size: 84px;
   font-weight: lighter;
   border-left: solid 2px #f3f3f3;
   border-bottom: solid 2px #f3f3f3;
-  color: orange;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 0;
 }
 
 ::-webkit-scrollbar {
@@ -139,4 +134,12 @@ main {
 /* Handle */
 ::-webkit-scrollbar-thumb {
   background-color: orange;
+}
+
+footer {
+  height: 120px;
+  background: gray;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

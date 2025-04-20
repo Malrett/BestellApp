@@ -1,14 +1,16 @@
 let basketContent = [];
 
 function init() {
-  renderDishes(mainDishes, "dishes_container");
-  renderDishes(starters, "starters_container");
+  renderDishes(mainDishes, "dishes_container", '<img src="./assets/img/noodles.jpg" alt="">');
+  renderDishes(starters, "starters_container", "./assets/img/antipasta.jpg");
   renderBasket();
 }
 
 function renderDishes(dishes, container) {
   let dishesRef = document.getElementById(container);
+  let dishesImgRef = document.getElementById(container);
   dishesRef.innerHTML = "";
+
   for (let indexDishes = 0; indexDishes < dishes.length; indexDishes++) {
     dishesRef.innerHTML += getDishTemplate(dishes, indexDishes);
   }
@@ -55,15 +57,17 @@ function deleteItem(basketIndex) {
 
 function calculateTotal() {
   let sumTotalRef = document.getElementById("sumTotal");
-  //sumTotalRef.innerHTML = "";
+  sumTotalRef.innerHTML = "";
   let sumItems = 0;
-  let deliveryCost = 5;
+  let subTotal = 0;
+  let deliveryCost = 5.0;
   let sumTotal = 0;
   for (let i = 0; i < basketContent.length; i++) {
     sumItems += basketContent[i].price * basketContent[i].amount;
   }
+  subTotal = sumItems;
   sumTotal = sumItems + deliveryCost;
-  sumTotalRef.innerHTML = sumTotal.toFixed(2).replace(".", ",") + " €";
+  sumTotalRef.innerHTML += getCostTemplate(subTotal, deliveryCost, sumTotal);
 }
 
 function renderBasket() {
