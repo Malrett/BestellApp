@@ -2,17 +2,16 @@
   position: sticky;
   top: 0;
   width: 400px;
-  height: 100vh;
   flex-grow: 1;
   box-shadow: -3px 0px 10px -2px rgb(0 0 0 / 20%);
 }
 
 .basket_headline {
   text-align: center;
+  border-bottom: solid 1px lightgrey;
 }
 
 .basket {
-  border-top: solid 1px lightgrey;
   border-bottom: solid 1px lightgrey;
   margin: 12px;
 }

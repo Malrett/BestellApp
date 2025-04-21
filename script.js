@@ -1,7 +1,11 @@
 let basketContent = [];
 
 function init() {
-  renderDishes(mainDishes, "dishes_container", '<img src="./assets/img/noodles.jpg" alt="">');
+  renderDishes(
+    mainDishes,
+    "dishes_container",
+    '<img src="./assets/img/noodles.jpg" alt="">'
+  );
   renderDishes(starters, "starters_container", "./assets/img/antipasta.jpg");
   renderBasket();
 }
@@ -18,7 +22,18 @@ function renderDishes(dishes, container) {
 
 function showMenu(showContainer, hideContainer) {
   document.getElementById(showContainer).classList.remove("d_none");
+
   document.getElementById(hideContainer).classList.add("d_none");
+}
+
+function showStartersImg() {
+  document.getElementById("starters_img").classList.remove("d_none");
+  document.getElementById("main_course_img").classList.add("d_none");
+}
+
+function showMainCourseImg() {
+  document.getElementById("starters_img").classList.add("d_none");
+  document.getElementById("main_course_img").classList.remove("d_none");
 }
 
 function addToBasket(dish, price) {

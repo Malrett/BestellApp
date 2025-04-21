@@ -97,6 +97,13 @@ main {
   border: 2px solid #f3f3f3;
 }
 
+.dishes_img {
+  height: 180px;
+  width: 100%;
+  object-fit: cover;
+  margin-bottom: 8px;
+}
+
 .dish:hover {
   background-color: rgba(247, 211, 166, 0.488);
 }
