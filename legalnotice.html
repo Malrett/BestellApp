@@ -3,16 +3,21 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Kochwelt - Impressum</title>
-    <link rel="icon" type="image/png" href="./img/logo_small.png" />
-    <link rel="stylesheet" href="./css/styles.css" />
-    <link rel="stylesheet" href="./css/fonts.css" />
-    <script src="./scripts/script.js"></script>
+    <script src="./scripts/db.js"></script>
+    <script src="script.js"></script>
+    <script src="./scripts/templates.js"></script>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="./styles/fonts.css" />
+    <link rel="stylesheet" href="./styles/assets.css" />
+    <link rel="stylesheet" href="./styles/basket.css" />
+    <link rel="stylesheet" href="./styles/standard.css" />
+    <title>BestellApp - Impressum</title>
+    <link rel="icon" type="image/x-icon" href="./assets/icons/favicon.ico" />
   </head>
-  <body onload="includeHTML()">
-    <header id="header" w3-include-html="templates/header.html"></header>
-    <main>
-      <section class="content" id="legalNotice">
+  <body>
+    <header><img src="./assets/img/Logo.png" alt="" /></header>
+    <main class="imprint_container">
+      <section class="legalNotice">
         <h1>Impressum</h1>
 
         <p>
@@ -33,9 +38,16 @@
         Created my free logo at <a href="https://logomakr.com" target="_blank">LogoMakr.com</a> <br /><br />
 
         The icons are provided by <a href="https://fontawesome.com/" rel="nofollow" target="_blank">FontAwesome</a> unter the
-        <a href="https://fontawesome.com/license" target="_blank" rel="nofollow">Creative Commons Attribution 4.0 International license</a>.
+        <a href="https://fontawesome.com/license" target="_blank" rel="nofollow">Creative Commons Attribution 4.0 International license.</a>
       </section>
+      <a href="index.html">Zurück</a>
     </main>
-    <footer w3-include-html="templates/footer.html" id="footer"></footer>
+    <footer>
+      <p>
+        © 2025 Malte Rettberg |
+        <a href="privacypolicy.html">Datenschutzerklärung</a> |
+        <a href="legalnotice.html">Impressum</a>
+      </p>
+    </footer>
   </body>
 </html>

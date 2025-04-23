@@ -1,14 +1,26 @@
 .basket_container {
   position: sticky;
   top: 0;
-  width: 400px;
+  width: 420px;
+  max-height: calc(100vh - 120px);
   flex-grow: 1;
   box-shadow: -3px 0px 10px -2px rgb(0 0 0 / 20%);
 }
 
 .basket_headline {
+  margin: 0 12px 0 12px;
+  padding: 20px;
   text-align: center;
   border-bottom: solid 1px lightgrey;
+}
+
+.empty_basket {
+  height: 250px;
+  padding-bottom: 12px;
+  color: lightgrey;
+  text-align: center;
+  display: flex;
+  align-items: center;
 }
 
 .basket {

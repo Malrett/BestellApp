@@ -12,6 +12,14 @@ function getDishTemplate(dish, index) {
     `;
 }
 
+function getEmptyBasketTemplate() {
+  return `
+    <div class="empty_basket" >
+      <h2>Suche dir etwas Leckeres von unserer Karte aus!</h2>
+    </div>
+  `;
+}
+
 function getBasketTemplate(dish, index) {
   return `
     <div class="basket_item">
@@ -47,4 +55,24 @@ function getCostTemplate(subTotal, deliveryCost, sumTotal) {
     </tr>  
   </table>
     `;
+}
+
+function getImprintTemplate() {
+  return `
+  <h1>Impressum</h1>
+        <p>
+          Malte Rettberg<br />
+          Hauptstr. 71<br />
+          76534 Baden-Baden
+        </p>
+        <h2>Kontakt</h2>
+        <p>
+          Telefon: +49 (0) 179 206 3114<br />
+          E-Mail: malte.rettberg@web.de
+        </p>
+        <p>Quelle: <a href="https://www.e-recht24.de">eRecht24</a></p>
+        Created my free logo at <a href="https://logomakr.com" target="_blank">LogoMakr.com</a> <br /><br />
+        The icons are provided by <a href="https://fontawesome.com/" rel="nofollow" target="_blank">FontAwesome</a> unter the
+        <a href="https://fontawesome.com/license" target="_blank" rel="nofollow">Creative Commons Attribution 4.0 International license</a>.
+  `;
 }

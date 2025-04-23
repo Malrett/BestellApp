@@ -2,10 +2,20 @@ body {
   margin: 0;
   font-family: figtree;
   font-variant-numeric: lining-nums;
+  -webkit-tap-highlight-color: transparent;
 }
 
 html {
   scroll-behavior: smooth;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+a:hover {
+  color: orange;
 }
 
 .d_none {
@@ -149,4 +159,34 @@ footer {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.imprint_container,
+.policy_container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.legalNotice,
+.privacy_policy {
+  width: 900px;
+  margin: 12px 12px 64px 12px;
+  padding: 12px;
+  height: calc(100vh - 362px);
+  overflow-y: scroll;
+  border: solid 1px orange;
+}
+
+@media (max-width: 920px) {
+  .restaurant_details {
+    margin-top: 60px;
+  }
+}
+
+@media (max-width: 700px) {
+  .basket_container {
+    display: none;
+  }
 }
