@@ -19,23 +19,49 @@
     <main>
       <div class="content_container">
         <section class="restaurant_head">
-          <img class="restaurant_img" src="./assets/img/tagliatelle-5154360_1280.jpg" alt="fresh tagliatelle" />
-          <img class="overlapping_img" src="./assets/img/tomato-3426927_640.jpg" alt="" />
+          <img
+            class="restaurant_img"
+            src="./assets/img/tagliatelle-5154360_1280.jpg"
+            alt="fresh tagliatelle"
+          />
+          <img
+            class="overlapping_img"
+            src="./assets/img/tomato-3426927_640.jpg"
+            alt=""
+          />
         </section>
         <section class="restaurant_details">
           <h1>Pasta Fresca</h1>
           <div class="restaurant_rating">Bewertung (4.8 von 5 Sternen)</div>
         </section>
         <section class="category_selection">
-          <p onclick="showMenu('starters_container', 'dishes_container', 'starters_img', 'main_course_img')">Vorspeisen</p>
-          <p onclick="showMenu('dishes_container', 'starters_container', 'main_course_img', 'starters_img')">Hauptgerichte</p>
+          <p
+            onclick="showMenu('starters_container', 'dishes_container', 'starters_img', 'main_course_img')"
+          >
+            Vorspeisen
+          </p>
+          <p
+            onclick="showMenu('dishes_container', 'starters_container', 'main_course_img', 'starters_img')"
+          >
+            Hauptgerichte
+          </p>
         </section>
         <section>
-          <img id="starters_img" src="./assets/img/antipasta.jpg" alt="" class="dishes_img" />
+          <img
+            id="starters_img"
+            src="./assets/img/antipasta.jpg"
+            alt=""
+            class="dishes_img"
+          />
           <div class="dishes_layout" id="starters_container"></div>
         </section>
         <section>
-          <img id="main_course_img" src="./assets/img/noodles.jpg" alt="" class="dishes_img d_none" />
+          <img
+            id="main_course_img"
+            src="./assets/img/noodles.jpg"
+            alt=""
+            class="dishes_img d_none"
+          />
           <div class="dishes_layout d_none" id="dishes_container"></div>
         </section>
       </div>
@@ -43,6 +69,16 @@
         <h2 class="basket_headline">Warenkorb</h2>
         <div id="basket" class="basket"></div>
         <div id="sumTotal" class="total_amount"></div>
+      </div>
+      <div
+        id="basket_overlay_container"
+        class="basket_overlay_container d_none"
+      >
+        <div id="basket_overlay" class="basket_overlay"></div>
+        <div id="sumTotal_overlay" class="total_amount_overlay"></div>
+      </div>
+      <div onclick="showBasketOverlay()" class="show_basket_overlay">
+        Warenkorb
       </div>
     </main>
     <footer>

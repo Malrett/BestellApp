@@ -3,7 +3,8 @@ let basketContent = [];
 function init() {
   renderDishes(mainDishes, "dishes_container");
   renderDishes(starters, "starters_container");
-  renderBasket();
+  renderBasket("basket", "sumTotal");
+  renderBasket("basket_overlay", "sumTotal_overlay");
 }
 
 function renderDishes(dishes, container) {
@@ -28,13 +29,15 @@ function addToBasket(dish, price) {
   } else {
     basketContent.push({ "name": dish, "price": price, "amount": 1 });
   }
-  renderBasket();
+  renderBasket("basket", "sumTotal");
+  renderBasket("basket_overlay", "sumTotal_overlay");
 }
 
 function reduceAmount(basketIndex) {
   if (basketContent[basketIndex].amount >= 2) {
     basketContent[basketIndex].amount--;
-    renderBasket();
+    renderBasket("basket", "sumTotal");
+    renderBasket("basket_overlay", "sumTotal_overlay");
   } else {
     deleteItem(basketIndex);
   }
@@ -42,12 +45,14 @@ function reduceAmount(basketIndex) {
 
 function addAmount(basketIndex) {
   basketContent[basketIndex].amount++;
-  renderBasket();
+  renderBasket("basket", "sumTotal");
+  renderBasket("basket_overlay", "sumTotal_overlay");
 }
 
 function deleteItem(basketIndex) {
   basketContent.splice(basketIndex, 1);
-  renderBasket();
+  renderBasket("basket", "sumTotal");
+  renderBasket("basket_overlay", "sumTotal_overlay");
 }
 
 function calculateTotal(sumTotalRef) {
@@ -63,20 +68,32 @@ function calculateTotal(sumTotalRef) {
   sumTotalRef.innerHTML += getCostTemplate(subTotal, deliveryCost, sumTotal);
 }
 
-function renderBasket() {
-  let basketContentRef = document.getElementById("basket");
+function renderBasket(basket, sumTotal) {
+  let basketContentRef = document.getElementById(basket);
   basketContentRef.innerHTML = "";
-  let sumTotalRef = document.getElementById("sumTotal");
+  let sumTotalRef = document.getElementById(sumTotal);
   sumTotalRef.innerHTML = "";
   if (basketContent.length === 0) {
     basketContentRef.innerHTML += getEmptyBasketTemplate();
     sumTotalRef.innerHTML = "";
   } else {
-    for (let indexBasket = 0; indexBasket < basketContent.length; indexBasket++) {
-      basketContentRef.innerHTML += getBasketTemplate(basketContent, indexBasket);
+    for (
+      let indexBasket = 0;
+      indexBasket < basketContent.length;
+      indexBasket++
+    ) {
+      basketContentRef.innerHTML += getBasketTemplate(
+        basketContent,
+        indexBasket
+      );
     }
     calculateTotal(sumTotalRef);
   }
+}
+
+function showBasketOverlay() {
+  basketOverlayRef = document.getElementById("basket_overlay_container");
+  basketOverlayRef.classList.remove("d_none");
 }
 
 function showOverlay() {
