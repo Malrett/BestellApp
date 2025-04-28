@@ -3,8 +3,7 @@ let basketContent = [];
 function init() {
   renderDishes(mainDishes, "dishes_container");
   renderDishes(starters, "starters_container");
-  renderBasket("basket", "sumTotal");
-  renderBasket("basket_overlay", "sumTotal_overlay");
+  renderBasket();
 }
 
 function renderDishes(dishes, container) {
@@ -29,15 +28,13 @@ function addToBasket(dish, price) {
   } else {
     basketContent.push({ "name": dish, "price": price, "amount": 1 });
   }
-  renderBasket("basket", "sumTotal");
-  renderBasket("basket_overlay", "sumTotal_overlay");
+  renderBasket();
 }
 
 function reduceAmount(basketIndex) {
   if (basketContent[basketIndex].amount >= 2) {
     basketContent[basketIndex].amount--;
-    renderBasket("basket", "sumTotal");
-    renderBasket("basket_overlay", "sumTotal_overlay");
+    renderBasket();
   } else {
     deleteItem(basketIndex);
   }
@@ -45,14 +42,12 @@ function reduceAmount(basketIndex) {
 
 function addAmount(basketIndex) {
   basketContent[basketIndex].amount++;
-  renderBasket("basket", "sumTotal");
-  renderBasket("basket_overlay", "sumTotal_overlay");
+  renderBasket();
 }
 
 function deleteItem(basketIndex) {
   basketContent.splice(basketIndex, 1);
-  renderBasket("basket", "sumTotal");
-  renderBasket("basket_overlay", "sumTotal_overlay");
+  renderBasket();
 }
 
 function calculateTotal(sumTotalRef) {
@@ -68,7 +63,12 @@ function calculateTotal(sumTotalRef) {
   sumTotalRef.innerHTML += getCostTemplate(subTotal, deliveryCost, sumTotal);
 }
 
-function renderBasket(basket, sumTotal) {
+function renderBasket() {
+  updateBasket("basket", "sumTotal");
+  updateBasket("basket_overlay", "sumTotal_overlay");
+}
+
+function updateBasket(basket, sumTotal) {
   let basketContentRef = document.getElementById(basket);
   basketContentRef.innerHTML = "";
   let sumTotalRef = document.getElementById(sumTotal);
@@ -76,28 +76,54 @@ function renderBasket(basket, sumTotal) {
   if (basketContent.length === 0) {
     basketContentRef.innerHTML += getEmptyBasketTemplate();
     sumTotalRef.innerHTML = "";
+    sumTotalRef.classList.remove("border_top");
   } else {
-    for (
-      let indexBasket = 0;
-      indexBasket < basketContent.length;
-      indexBasket++
-    ) {
-      basketContentRef.innerHTML += getBasketTemplate(
-        basketContent,
-        indexBasket
-      );
+    for (let indexBasket = 0; indexBasket < basketContent.length; indexBasket++) {
+      basketContentRef.innerHTML += getBasketTemplate(basketContent, indexBasket);
     }
+    sumTotalRef.classList.add("border_top");
+    sumTotalRef.classList.remove("d_none");
     calculateTotal(sumTotalRef);
   }
 }
 
-function showBasketOverlay() {
-  basketOverlayRef = document.getElementById("basket_overlay_container");
-  basketOverlayRef.classList.remove("d_none");
+function orderItems() {
+  basketContent.length = 0;
+  renderOrderConfirmation("basket", "sumTotal");
+  renderOrderConfirmation("basket_overlay", "sumTotal_overlay");
 }
 
-function showOverlay() {
-  let OverlayContentRef = document.getElementById("overlay");
-  OverlayContentRef.innerHTML = "";
-  OverlayContentRef.innerHTML += getImprintTemplate();
+function renderOrderConfirmation(basket, sumTotal) {
+  let basketContentRef = document.getElementById(basket);
+  basketContentRef.innerHTML = "";
+  basketContentRef.innerHTML += getConfirmationTemplate();
+  let sumTotalRef = document.getElementById(sumTotal);
+  sumTotalRef.innerHTML = "";
+  sumTotalRef.classList.remove("border_top");
+}
+
+function toggleBasketOverlay(button) {
+  basketOverlayRef = document.getElementById("basket_overlay_container");
+  basketOverlayRef.classList.toggle("d_none");
+  respBasketButtonRef = document.getElementById(button);
+  respBasketButtonRef.classList.toggle("d_none");
+}
+
+function showImprint() {
+  let legalInformationRef = document.getElementById("legal_overlay_container");
+  legalInformationRef.classList.remove("d_none");
+  legalInformationRef.innerHTML = "";
+  legalInformationRef.innerHTML += getImprintTemplate();
+}
+
+function showPolicy() {
+  let legalInformationRef = document.getElementById("legal_overlay_container");
+  legalInformationRef.classList.remove("d_none");
+  legalInformationRef.innerHTML = "";
+  legalInformationRef.innerHTML += getPolicyTemplate();
+}
+
+function closeOverlay() {
+  let legalInformationRef = document.getElementById("legal_overlay_container");
+  legalInformationRef.classList.add("d_none");
 }

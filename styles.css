@@ -9,19 +9,6 @@ html {
   scroll-behavior: smooth;
 }
 
-a {
-  text-decoration: none;
-  color: black;
-}
-
-a:hover {
-  color: orange;
-}
-
-.d_none {
-  display: none !important; /* "!important"," because some classes already contain display: flex */
-}
-
 h1 {
   font-size: 40px;
 }
@@ -34,9 +21,14 @@ header {
   padding-left: 20px;
 }
 
+header img {
+  height: 100px;
+}
+
 main {
   display: flex;
   flex-direction: row;
+  margin-bottom: 135px;
 }
 
 .content_container {
@@ -129,14 +121,19 @@ main {
 }
 
 .right_side {
-  width: 60px;
-  height: 60px;
   font-weight: lighter;
   border-left: solid 2px #f3f3f3;
   border-bottom: solid 2px #f3f3f3;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.button_container {
+  width: 100%;
+  display: flex;
+  position: fixed;
+  bottom: 115px;
 }
 
 ::-webkit-scrollbar {
@@ -155,29 +152,55 @@ main {
 }
 
 footer {
+  position: fixed;
+  bottom: 0;
   height: 120px;
+  width: 100%;
   background: gray;
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: 8px;
 }
 
-.imprint_container,
-.policy_container {
+footer p {
+  color: orange;
+  cursor: pointer;
+  margin: 0;
+}
+
+footer p:hover {
+  color: white;
+}
+
+#legal_overlay_container {
   display: flex;
   justify-content: center;
   flex-direction: column;
   align-items: center;
+  position: absolute;
+  height: 100vh;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+#legal_overlay_container img {
+  height: 24px;
+  width: 24px;
+  cursor: pointer;
 }
 
 .legalNotice,
 .privacy_policy {
-  width: 900px;
   margin: 12px 12px 64px 12px;
   padding: 12px;
-  height: calc(100vh - 362px);
+  height: 800px;
+  max-width: 600px;
   overflow-y: scroll;
   border: solid 1px orange;
+  background-color: white;
 }
 
 @media (max-width: 920px) {
@@ -187,8 +210,8 @@ footer {
 }
 
 @media (min-width: 701px) {
-  .show_basket_overlay {
-    display: none !important;
+  .button_container {
+    display: none;
   }
 
   .basket_overlay_container {
@@ -199,9 +222,17 @@ footer {
 @media (max-width: 700px) {
   main {
     flex-direction: column;
+    margin-bottom: 201px;
   }
 
   .basket_container {
     display: none;
+  }
+}
+
+@media (max-width: 444px) {
+  footer {
+    gap: 4px;
+    flex-direction: column;
   }
 }

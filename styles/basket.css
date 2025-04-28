@@ -2,30 +2,32 @@
   position: sticky;
   top: 0;
   width: 420px;
+  padding-left: 12px;
   max-height: calc(100vh - 120px);
-  flex-grow: 1;
   box-shadow: -3px 0px 10px -2px rgb(0 0 0 / 20%);
+  overflow-y: scroll;
 }
 
 .basket_headline {
-  margin: 0 12px 0 12px;
+  margin: 0;
   padding: 20px;
   text-align: center;
-  border-bottom: solid 1px lightgrey;
 }
 
 .empty_basket {
   height: 250px;
-  padding-bottom: 12px;
   color: lightgrey;
   text-align: center;
   display: flex;
   align-items: center;
+  justify-content: center;
+  padding: 12px;
+  border-bottom: solid 1px lightgrey;
+  margin-bottom: 12px;
 }
 
 .basket {
-  border-bottom: solid 1px lightgrey;
-  margin: 12px;
+  width: 100%;
 }
 
 .basket_item {
@@ -49,15 +51,28 @@
 .change_amount {
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  width: 140px;
   gap: 12px;
 }
 
 .total_amount {
-  margin: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
 }
 
 table {
   width: 100%;
+  padding: 12px;
+}
+
+tr {
+  height: 20px;
+}
+
+tr p {
+  margin: 0;
 }
 
 td:first-child {
@@ -65,17 +80,13 @@ td:first-child {
 }
 
 td:nth-child(2) {
-  width: flexgrow(1);
   text-align: end;
 }
 
 .show_basket_overlay {
-  position: sticky;
-  bottom: 12px;
-  height: 62px;
+  height: 70px;
   background-color: #3c7ad1;
   color: whitesmoke;
-  padding: 4px;
   margin: 12px;
   display: flex;
   justify-content: center;
@@ -88,11 +99,40 @@ td:nth-child(2) {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  overflow-y: scroll;
   height: 100vh;
   width: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
+  padding-left: 12px;
+  position: fixed;
+  top: 0px;
+  right: 0;
   background-color: white;
+}
+
+.basket_overlay_headline {
+  height: 70px;
+  width: 100%;
+  background-color: #3c7ad1;
+  color: whitesmoke;
+  margin-top: 12px;
+  margin-left: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.basket_overlay {
+  width: 100%;
+}
+
+.total_amount_overlay {
+  width: 100%;
+  margin-left: 24px;
+}
+
+.total_amount_overlay table {
+  padding-left: 0;
 }

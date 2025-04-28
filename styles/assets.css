@@ -1,5 +1,10 @@
-header img {
-  height: 100px;
+a {
+  text-decoration: none;
+  color: orange;
+}
+
+.d_none {
+  display: none !important; /* "!important"," because some classes already contain display: flex */
 }
 
 .recycleBin {
@@ -8,7 +13,45 @@ header img {
 
 .clickable {
   cursor: pointer;
-  font-size: 60px;
   color: orange;
-  margin: 0;
+  width: 28px;
+  height: 28px;
+  padding: 6px;
+}
+
+.clickable:hover {
+  border: 2px solid orange;
+  border-radius: 100%;
+  margin: -2px;
+}
+
+.border_bottom {
+  margin-top: 12px;
+  border-bottom: solid 1px lightgrey;
+}
+
+.border_top {
+  margin-top: 12px;
+  border-top: solid 1px lightgrey;
+}
+
+.margin_left {
+  margin-left: 24px;
+  margin-top: 12px;
+  border-top: solid 1px lightgrey;
+}
+
+button {
+  background-color: orange;
+  color: white;
+  font-size: 20px;
+  font-weight: 700;
+  height: 40px;
+  border: none;
+  width: 100%;
+  cursor: pointer;
+}
+
+button:hover {
+  font-size: 24px;
 }
