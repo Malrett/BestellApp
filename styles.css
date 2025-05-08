@@ -32,11 +32,12 @@ header img {
 main {
   display: flex;
   flex-direction: row;
-  margin-bottom: 132px;
+  margin-bottom: 120px;
 }
 
 .content_container {
   width: 100%;
+  margin-bottom: 12px;
 }
 
 .restaurant_head {
