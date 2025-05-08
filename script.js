@@ -68,6 +68,7 @@ function confirmOrder() {
   basketOverlayRef.classList.add("d_none");
   let = respBasketButtonRef = document.getElementById("respBasketButton");
   respBasketButtonRef.classList.remove("d_none");
+  document.body.classList.remove("hide");
   renderBasket();
 }
 
