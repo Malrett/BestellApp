@@ -4,9 +4,8 @@
   width: 420px;
   padding-left: 12px;
   padding-bottom: 12px;
-  max-height: calc(100vh - 120px);
+  max-height: calc(100vh - 144px);
   box-shadow: -3px 0px 10px -2px rgb(0 0 0 / 20%);
-  overflow-y: scroll;
 }
 
 .basket_headline {
@@ -29,6 +28,8 @@
 
 .basket {
   width: 100%;
+  max-height: calc(100% - 230px);
+  overflow-y: scroll;
 }
 
 .basket_item {
@@ -97,7 +98,7 @@ td:nth-child(2) {
 
 .show_basket_overlay {
   position: fixed;
-  bottom: 132px;
+  bottom: 120px;
   width: calc(100% - 24px);
   margin: 12px;
 }

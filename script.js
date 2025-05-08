@@ -86,13 +86,17 @@ function updateBasket(basket, sumTotal) {
     sumTotalRef.innerHTML = "";
     sumTotalRef.classList.remove("border_top");
   } else {
-    for (let indexBasket = 0; indexBasket < basketContent.length; indexBasket++) {
-      basketContentRef.innerHTML += getBasketTemplate(basketContent, indexBasket);
-    }
-    sumTotalRef.classList.add("border_top");
-    sumTotalRef.classList.remove("d_none");
-    calculateTotal(sumTotalRef);
+    updateFilledBasket(basketContentRef, sumTotalRef);
   }
+}
+
+function updateFilledBasket(basketContentRef, sumTotalRef) {
+  for (let indexBasket = 0; indexBasket < basketContent.length; indexBasket++) {
+    basketContentRef.innerHTML += getBasketTemplate(basketContent, indexBasket);
+  }
+  sumTotalRef.classList.add("border_top");
+  sumTotalRef.classList.remove("d_none");
+  calculateTotal(sumTotalRef);
 }
 
 function orderItems() {
@@ -115,6 +119,7 @@ function toggleBasketOverlay() {
   basketOverlayRef.classList.toggle("d_none");
   let = respBasketButtonRef = document.getElementById("respBasketButton");
   respBasketButtonRef.classList.toggle("d_none");
+  document.body.classList.toggle("hide");
 }
 
 function showImprint() {
