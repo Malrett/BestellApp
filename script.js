@@ -63,6 +63,14 @@ function calculateTotal(sumTotalRef) {
   sumTotalRef.innerHTML += getCostTemplate(subTotal, deliveryCost, sumTotal);
 }
 
+function confirmOrder() {
+  let = basketOverlayRef = document.getElementById("basket_overlay_container");
+  basketOverlayRef.classList.add("d_none");
+  let = respBasketButtonRef = document.getElementById("respBasketButton");
+  respBasketButtonRef.classList.remove("d_none");
+  renderBasket();
+}
+
 function renderBasket() {
   updateBasket("basket", "sumTotal");
   updateBasket("basket_overlay", "sumTotal_overlay");
@@ -102,10 +110,10 @@ function renderOrderConfirmation(basket, sumTotal) {
   sumTotalRef.classList.remove("border_top");
 }
 
-function toggleBasketOverlay(button) {
-  basketOverlayRef = document.getElementById("basket_overlay_container");
+function toggleBasketOverlay() {
+  let = basketOverlayRef = document.getElementById("basket_overlay_container");
   basketOverlayRef.classList.toggle("d_none");
-  respBasketButtonRef = document.getElementById(button);
+  let = respBasketButtonRef = document.getElementById("respBasketButton");
   respBasketButtonRef.classList.toggle("d_none");
 }
 

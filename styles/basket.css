@@ -3,6 +3,7 @@
   top: 0;
   width: 420px;
   padding-left: 12px;
+  padding-bottom: 12px;
   max-height: calc(100vh - 120px);
   box-shadow: -3px 0px 10px -2px rgb(0 0 0 / 20%);
   overflow-y: scroll;
@@ -39,6 +40,7 @@
   margin: 0;
   font-size: 22px;
   padding-top: 12px;
+  padding-right: 12px;
 }
 
 .basket_details {
@@ -83,45 +85,35 @@ td:nth-child(2) {
   text-align: end;
 }
 
-.show_basket_overlay {
-  height: 70px;
+.basket_overlay_button {
   background-color: #3c7ad1;
   color: whitesmoke;
-  margin: 12px;
   display: flex;
   justify-content: center;
-  align-items: center;
   font-size: 24px;
+  font-weight: 700;
   cursor: pointer;
+}
+
+.show_basket_overlay {
+  position: fixed;
+  bottom: 132px;
+  width: calc(100% - 24px);
+  margin: 12px;
 }
 
 .basket_overlay_container {
   display: flex;
   flex-direction: column;
-  align-items: center;
   overflow-y: scroll;
-  height: 100vh;
-  width: 100%;
   padding-left: 12px;
+  padding-bottom: 12px;
   position: fixed;
   top: 0px;
   right: 0;
+  bottom: 132px;
+  left: 0;
   background-color: white;
-}
-
-.basket_overlay_headline {
-  height: 70px;
-  width: 100%;
-  background-color: #3c7ad1;
-  color: whitesmoke;
-  margin-top: 12px;
-  margin-left: 24px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 24px;
-  font-weight: 700;
-  cursor: pointer;
 }
 
 .basket_overlay {
@@ -130,9 +122,4 @@ td:nth-child(2) {
 
 .total_amount_overlay {
   width: 100%;
-  margin-left: 24px;
-}
-
-.total_amount_overlay table {
-  padding-left: 0;
 }

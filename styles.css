@@ -178,7 +178,7 @@ footer p:hover {
   justify-content: center;
   flex-direction: column;
   align-items: center;
-  position: absolute;
+  position: fixed;
   height: 100vh;
   width: 100%;
   top: 0;
@@ -210,8 +210,8 @@ footer p:hover {
 }
 
 @media (min-width: 701px) {
-  .button_container {
-    display: none;
+  .show_basket_overlay {
+    display: none !important;
   }
 
   .basket_overlay_container {

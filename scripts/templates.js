@@ -61,7 +61,7 @@ function getConfirmationTemplate() {
   <div class="empty_basket" >
       <h2>Deine Bestellung ist unterwegs!</h2>
     </div>
-    <button onclick="renderBasket()">Ok!</button>
+    <button onclick="confirmOrder()">Ok!</button>
   `;
 }
 
